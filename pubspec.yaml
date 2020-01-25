@@ -24,6 +24,7 @@ dependencies:
   splashscreen:
   flutter:
     sdk: flutter
+  firebase_messaging:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -48,8 +49,9 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - images/AAi_logo_2_1.png
-    - images/image002 (1).png
     - images/user.png
+    - images/try.jpg
+    - images/try2.jpg
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
