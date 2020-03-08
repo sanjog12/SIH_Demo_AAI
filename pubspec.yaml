@@ -17,6 +17,7 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  barcode_scan:
   curved_navigation_bar:
   firebase_auth:
   cloud_firestore:
@@ -52,7 +53,8 @@ flutter:
     - images/user.png
     - images/try.jpg
     - images/try2.jpg
-  #  - images/a_dot_ham.jpeg
+    - images/log.png
+    - images/splash.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -66,16 +68,16 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   # fonts:
-  #   - family: Schyler
+  #   - family: Raleway
   #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
+  #       - asset: fonts/Raleway-Regular.ttf
+  #       - asset: fonts/Raleway-Italic.ttf
   #         style: italic
-  #   - family: Trajan Pro
+  #   - family: RobotoMono
   #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+  #       - asset: fonts/RobotoMono-Regular.ttf
+  #       - asset: fonts/RobotoMono_Bold.ttf
+  #         weight: 300
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

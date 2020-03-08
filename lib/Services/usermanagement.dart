@@ -13,11 +13,15 @@ class UserManagement{
 //		},);
 //	}
 	
-	storeNewUser(user,email,name,dob,context){
+	storeNewUser(user,email,name,dob,deg,field,mob,add,context){
 		Firestore.instance.collection('/users').document(email).setData({
 			'email':email,
 			'name':name,
 			'dob':dob,
+			'Designation' :deg,
+			'Field': field,
+			'Mobile Number':mob,
+			'Address':add,
 		}).then((value){
 			Navigator.of(context).pop();
 		}).catchError((e){

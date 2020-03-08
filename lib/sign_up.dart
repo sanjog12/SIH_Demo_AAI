@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/services.dart';
 import 'package:sih_test2/Services/usermanagement.dart';
 import 'Services/usermanagement.dart';
 
@@ -18,7 +19,7 @@ class _signup extends State<signup> {
   String _pass;
   String _cpass;
   String _name;
-  String _dob;
+  String _dob,_deg,_field,_add,_mob;
   FirebaseUser signedInUser;
   
   
@@ -31,9 +32,6 @@ class _signup extends State<signup> {
       return false;
     }
   }
-  
-  
-  
 
   @override
   Widget build(BuildContext context) {
@@ -71,12 +69,14 @@ class _signup extends State<signup> {
             Padding(
               padding: EdgeInsets.only(top: 40.0, left: 40.0, right: 40.0),
               child: TextField(
+                obscureText: true,
                 onChanged: (value) {
                   setState(() {
                     _pass = value;
                   });
                 },
                 decoration: InputDecoration(
+                  
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
@@ -89,6 +89,7 @@ class _signup extends State<signup> {
             Padding(
               padding: EdgeInsets.only(top: 10.0, left: 80.0, right: 40.0),
               child: TextField(
+                obscureText: true,
                 onChanged: (value) {
                   setState(() {
                     _cpass = value;
@@ -137,6 +138,64 @@ class _signup extends State<signup> {
                 ),
               ),
             ),
+  
+            Padding(
+              padding: EdgeInsets.only(top: 10.0, left: 40.0, right: 40.0),
+              child: TextField(
+                onChanged: (value) {
+                  setState(() {
+                    _deg = value;
+                  });
+                },
+                decoration: InputDecoration(
+                  labelText: 'Designation ',
+                ),
+              ),
+            ),
+  
+  
+            Padding(
+              padding: EdgeInsets.only(top: 10.0, left: 40.0, right: 40.0),
+              child: TextField(
+                onChanged: (value) {
+                  setState(() {
+                    _field = value;
+                  });
+                },
+                decoration: InputDecoration(
+                  labelText: 'Field',
+                ),
+              ),
+            ),
+  
+            Padding(
+              padding: EdgeInsets.only(top: 10.0, left: 40.0, right: 40.0),
+              child: TextField(
+                keyboardType: TextInputType.number,
+                onChanged: (value) {
+                  setState(() {
+                    _mob = value;
+                  });
+                },
+                decoration: InputDecoration(
+                  labelText: 'Mobile Number',
+                ),
+              ),
+            ),
+  
+            Padding(
+              padding: EdgeInsets.only(top: 10.0, left: 40.0, right: 40.0),
+              child: TextField(
+                onChanged: (value) {
+                  setState(() {
+                    _add = value;
+                  });
+                },
+                decoration: InputDecoration(
+                  labelText: 'Address',
+                ),
+              ),
+            ),
  
            
             Padding(
@@ -156,7 +215,7 @@ class _signup extends State<signup> {
                       password: _pass,
                     )
                         .then((signedInUser) {
-                          UserManagement().storeNewUser(signedInUser,_email,_name,_dob, context);
+                          UserManagement().storeNewUser(signedInUser,_email,_name,_dob,_deg,_field,_mob,_add,context);
 
                     }).catchError((e) {
                       print(e);

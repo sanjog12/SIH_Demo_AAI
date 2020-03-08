@@ -8,7 +8,7 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="sih_test2"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@drawable/sih_logo">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
